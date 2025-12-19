@@ -4,72 +4,54 @@ import pygame, random
 pygame.init()
 
 def make_text(font_object, text, color, background_color):
-    # TODO: Use the given font_object to create and return a rendered text Surface.
-    #       - Use font_object.render(...)
-    #       - Make sure antialias is set to True
-    #       - Use the given text, color, and background_color
-    pass # TODO: remove this when finished
+    font_object.render(text, True, color, background_color)
+    pass
 
 
 def blit(surface, item, rect):
-    # TODO: Draw (blit) the given item (Surface) onto the given surface at the given rect.
-    #       - Use the surface.blit(...) method
-    pass # TODO: remove this when finished
-
+    surface.blit(item, rect)
+    pass
 
 def fill(surface, color):
-    # TODO: Fill the entire surface with the given color using surface.fill(...)
-    pass # TODO: remove this when finished
+    surface.fill(white)
+    pass
 
 
 def update_display():
-    # TODO: Update the entire display so that any drawing shows up on the screen.
-    #       - Use pygame.display.update()
-    pass # TODO: remove this when finished
+    pygame.display.update()
+    pass
 
 
 # Set display surface
-# TODO:
-#   - Create WINDOW_WIDTH and WINDOW_HEIGHT constants (e.g., 1000 x 400).
-#   - Use pygame.display.set_mode to create the display_surface with that size.
-#   - Set a window caption like "Feed the Dragon" using pygame.display.set_caption(...).
-
-
+window_width = 1000
+window_height = 400
+pygame.display.set_mode((window_width, window_height))
+pygame.display.set_caption("Feed the Dragon")
 # Set FPS and clock
 # TODO:
-#   - Create an FPS constant (e.g., 60).
-#   - Create a clock object using pygame.time.Clock() for controlling the frame rate.
+FPS = 60
+pygame.time.Clock()
 
 
 # Set game values
-# TODO:
-#   - Create constants for:
-#       * PLAYER_STARTING_LIVES (e.g., 5)
-#       * PLAYER_VELOCITY (how fast the dragon moves up/down) (e.g., 10)
-#       * COIN_STARTING_VELOCITY (how fast the coin moves at the start) (e.g, 10)
-#       * COIN_ACCELERATION (how much faster the coin gets after each catch) (e.g., 0.5)
-#       * BUFFER_DISTANCE (how far off-screen to respawn the coin on the right) (e.g, 100)
-#   - Create variables for:
-#       * score (starting at 0)
-#       * player_lives (start at PLAYER_STARTING_LIVES)
-#       * coin_velocity (start at COIN_STARTING_VELOCITY)
-
+PLAYER_STARTING_LIVES = (2)
+player_velocity = (0,10)
+coin_velocity = (0,10)
+coin_acceleration = (0,5)
+BUFFER_DISTANCE = 100
+score = (0)
+PLAYER_LIVES = PLAYER_STARTING_LIVES
+coin_velocity = coin_velocity
 
 # Set colors
-# TODO:
-#   - Define color constants using RGB tuples, such as:
-#       * GREEN
-#       * DARKGREEN:  RGB value of 10, 50, 10
-#       * WHITE
-#       * BLACK
-
+green =(0, 255, 0)
+darkgreen = (10, 50, 10)
+white = (255, 255, 255)
+black = (0, 0, 0)
 
 # Set fonts
-# TODO:
-#   - Create a font object using pygame.font.Font(...)
-#   - Use the provided font file from the assets folder (e.g., "assets/AttackGraffiti.ttf")
-#   - Choose a font size (e.g., 32)
-
+pygame.font.Font("assets/AttackGraffiti.ttf")
+font_size = 32
 
 # Set text
 # TODO:
@@ -82,6 +64,14 @@ def update_display():
 #       * score_rect at the top-left (e.g., (10, 10))
 #       * title_rect centered horizontally at the top
 #       * lives_rect at the top-right (e.g., (WINDOW_WIDTH - 10, 10))
+make_text()
+score_text = "Score: 0"
+title_text = "Title: Feed the Dragon"
+lives_text = "Lives: 2"
+
+
+get_rect()
+
 
 
 # Set sounds and music
